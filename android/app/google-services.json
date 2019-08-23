@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "589417843836",
+    "firebase_url": "https://fluttershare-32c5f.firebaseio.com",
+    "project_id": "fluttershare-32c5f",
+    "storage_bucket": "fluttershare-32c5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589417843836:android:c17a05015593db44",
+        "android_client_info": {
+          "package_name": "com.jpvc.fluttershare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589417843836-igpeqmd1ohee4m2uhjt2h0v3ovo17g1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jpvc.fluttershare",
+            "certificate_hash": "6a4cde555f380bf1eff80639d053a6510aba3558"
+          }
+        },
+        {
+          "client_id": "589417843836-ejk5sc4473nmihasenh7eml36q1m4cvd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jpvc.fluttershare",
+            "certificate_hash": "840d423ba6f049ef023bd0b11dd0923254d49a10"
+          }
+        },
+        {
+          "client_id": "589417843836-35qg2h3f8dlqe7n1ragngn99al2edb67.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jpvc.fluttershare",
+            "certificate_hash": "a5107431a73f642918c81acffe396dcca35c50c9"
+          }
+        },
+        {
+          "client_id": "589417843836-sp9ccrsahc4s2qaq5nmnn5dcgrbrvr9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ3HQPqxvWMob2F41gxbO9gr7MXfdwH_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589417843836-fi7u1ffe060s71gu4smubihlp049vcj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
