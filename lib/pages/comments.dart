@@ -39,31 +39,46 @@ class CommentsState extends State<Comments> {
 
   buildComments() {
     return StreamBuilder(
-      stream: commentsRef.document(postId).collection('comments')
-          .orderBy("timestamp", descending: false).snapshots(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return circularProgress();
-        }
-        List<Comment> comments = [];
-        snapshot.data.documents.forEach((doc) {
-          comments.add(Comment.fromDocument(doc));
+        stream: commentsRef
+            .document(postId)
+            .collection('comments')
+            .orderBy("timestamp", descending: false)
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return circularProgress();
+          }
+          List<Comment> comments = [];
+          snapshot.data.documents.forEach((doc) {
+            comments.add(Comment.fromDocument(doc));
+          });
+          return ListView(
+            children: comments,
+          );
         });
-        return ListView(
-          children: comments,
-        );
-      },
-    );
   }
 
   addComment() {
     commentsRef.document(postId).collection("comments").add({
-        "username": currentUser.username,
-        "comment": commentController.text,
+      "username": currentUser.username,
+      "comment": commentController.text,
+      "timestamp": timestamp,
+      "avatarUrl": currentUser.photoUrl,
+      "userId": currentUser.id,
+    });
+    bool isNotPostOwner = postOwnerId != currentUser.id;
+    if (isNotPostOwner) {
+      activityFeedRef.document(postOwnerId).collection('feedItems').add({
+        "type": "comment",
+        "commentData": commentController.text,
         "timestamp": timestamp,
-        "avatarUrl": currentUser.photoUrl,
-        "userId": currentUser.id
-     });
+        "postId": postId,
+        "userId": currentUser.id,
+        "username": currentUser.username,
+        "userProfileImg": currentUser.photoUrl,
+        "mediaUrl": postMediaUrl,
+      });
+    }
     commentController.clear();
   }
 
@@ -78,16 +93,14 @@ class CommentsState extends State<Comments> {
           ListTile(
             title: TextFormField(
               controller: commentController,
-              decoration: InputDecoration(
-                labelText: "Write a comment.."
-              ),
+              decoration: InputDecoration(labelText: "Write a comment..."),
             ),
             trailing: OutlineButton(
               onPressed: addComment,
               borderSide: BorderSide.none,
               child: Text("Post"),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -106,7 +119,7 @@ class Comment extends StatelessWidget {
     this.userId,
     this.avatarUrl,
     this.comment,
-    this.timestamp
+    this.timestamp,
   });
 
   factory Comment.fromDocument(DocumentSnapshot doc) {
@@ -128,9 +141,7 @@ class Comment extends StatelessWidget {
           leading: CircleAvatar(
             backgroundImage: CachedNetworkImageProvider(avatarUrl),
           ),
-          subtitle: Text(
-              timeago.format(timestamp.toDate()),
-          ),
+          subtitle: Text(timeago.format(timestamp.toDate())),
         ),
         Divider(),
       ],
