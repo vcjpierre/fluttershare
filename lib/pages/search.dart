@@ -101,7 +101,7 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor.withOpacity(0.8),
+      // backgroundColor: Theme.of(context).primaryColor.withOpacity(0.8),
       appBar: buildSearchField(),
       body:
       searchResultsFuture == null ? buildNoContent() : buildSearchResults(),
@@ -117,7 +117,7 @@ class UserResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor.withOpacity(0.7),
+      color: Colors.white70,
       child: Column(
         children: <Widget>[
           GestureDetector(
@@ -130,11 +130,11 @@ class UserResult extends StatelessWidget {
               title: Text(
                 user.displayName,
                 style:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               subtitle: Text(
                 user.username,
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.black),
               ),
             ),
           ),
