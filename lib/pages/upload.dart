@@ -21,8 +21,8 @@ class Upload extends StatefulWidget {
   _UploadState createState() => _UploadState();
 }
 
-class _UploadState extends State<Upload>
-    with AutomaticKeepAliveClientMixin<Upload> {
+class _UploadState extends State<Upload> with 
+  AutomaticKeepAliveClientMixin<Upload> {
   TextEditingController captionController = TextEditingController();
   TextEditingController locationController = TextEditingController();
   File file;
