@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttershare/pages/activity_feed.dart';
 import 'package:fluttershare/pages/profile.dart';
 import 'package:fluttershare/pages/search.dart';
+import 'package:fluttershare/pages/timeline.dart';
 import 'package:fluttershare/pages/upload.dart';
 import 'package:fluttershare/pages/create_account.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -18,6 +19,7 @@ final commentsRef = Firestore.instance.collection('comments');
 final activityFeedRef = Firestore.instance.collection('feed');
 final followersRef = Firestore.instance.collection('followers');
 final followingRef = Firestore.instance.collection('following');
+final timelineRef = Firestore.instance.collection('timeline');
 final DateTime timestamp = DateTime.now();
 User currentUser;
 
@@ -87,7 +89,13 @@ class _HomeState extends State<Home> {
         "timestamp": timestamp
       });
 
-      doc = await usersRef.document(user.id).get();
+      await followersRef
+          .document(user.id)
+          .collection('userFollowers')
+          .document(user.id)
+          .setData({});
+
+      doc = await usersRef.document(user.id).get();    
     }
 
     currentUser = User.fromDocument(doc);
@@ -121,11 +129,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView(
         children: <Widget>[
-//          Timeline(),
-           RaisedButton(
-             child: Text('Logout'),
-             onPressed: logout,
-           ),
+          Timeline(currentUser: currentUser),
           ActivityFeed(),
           Upload(currentUser: currentUser),
           Search(),
@@ -157,7 +161,7 @@ class _HomeState extends State<Home> {
     //   onPressed: logout,
     // );
   }
-
+  
   Scaffold buildUnAuthScreen() {
     return Scaffold(
       body: Container(
