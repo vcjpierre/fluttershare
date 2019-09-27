@@ -93,7 +93,7 @@ class ActivityFeedItem extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => PostScreen(
           postId: postId,
-          userId: userId,
+          userId: currentUser.id
         ),
       ),
     );
