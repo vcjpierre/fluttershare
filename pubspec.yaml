@@ -34,6 +34,7 @@ dependencies:
   timeago: 2.0.17
   cached_network_image:
   flutter_svg:
+  flutter_signin_button: ^0.3.0
 
 dev_dependencies:
   flutter_test:
@@ -50,8 +51,5 @@ flutter:
       fonts:
         - asset: assets/fonts/Signatra.ttf
   assets:
-    - assets/images/google_signin_button.png
-    - assets/images/upload.svg
-    - assets/images/search.svg
-    - assets/images/activity_feed.svg
-    - assets/images/no_content.svg
+    - assets/
+    - assets/images/
