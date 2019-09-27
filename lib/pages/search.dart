@@ -33,10 +33,10 @@ class _SearchState extends State<Search> with
   AppBar buildSearchField() {
     return AppBar(
       backgroundColor: Colors.white,
-      title: TextFormField(
+      title: TextFormField(        
         controller: searchController,
-        decoration: InputDecoration(
-          hintText: "Search for a user...",
+        decoration: InputDecoration(          
+          hintText: "Search a user...",
           filled: true,
           prefixIcon: Icon(
             Icons.account_box,
@@ -62,17 +62,7 @@ class _SearchState extends State<Search> with
             SvgPicture.asset(
               'assets/images/search.svg',
               height: orientation == Orientation.portrait ? 300.0 : 200.0,
-            ),
-            Text(
-              "Find Users",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w600,
-                fontSize: 60.0,
-              ),
-            ),
+            ),            
           ],
         ),
       ),

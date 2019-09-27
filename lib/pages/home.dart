@@ -12,6 +12,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:fluttershare/models/user.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
 final StorageReference storageRef = FirebaseStorage.instance.ref();
@@ -228,28 +229,41 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              'FlutterShare',
+              'SocialShare',
               style: TextStyle(
                 fontFamily: "Signatra",
                 fontSize: 90.0,
                 color: Colors.white,
               ),
             ),
-            GestureDetector(
-              onTap: login,
-              child: Container(
-                width: 260.0,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      'assets/images/google_signin_button.png',
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+            SignInButton(
+              Buttons.Google,
+              text: "Sign up with Google",
+              onPressed: login,
+            ),
+
+            SignInButton(
+              Buttons.Facebook,
+              text: "Sign up with Facebook",
+              onPressed: () => print('pressed'),
             )
+
+            // GestureDetector(
+            //   onTap: login,
+            //   child: Container(
+            //     width: 260.0,
+            //     height: 60.0,
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //         image: AssetImage(
+            //           'assets/images/google_signin_button.png',
+            //         ),
+            //         fit: BoxFit.cover,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            
           ],
         ),
       ),

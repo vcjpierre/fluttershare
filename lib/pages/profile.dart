@@ -321,7 +321,7 @@ class _ProfileState extends State<Profile> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SvgPicture.asset('assets/images/no_content.svg', height: 260.0),
+            SvgPicture.asset('assets/images/no_content.svg', height: 200.0),
             Padding(
               padding: EdgeInsets.only(top: 20.0),
               child: Text(
