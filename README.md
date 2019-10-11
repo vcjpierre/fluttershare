@@ -1,5 +1,5 @@
 ## FlutterShare
 
 <p align="center">
-    <img src="assets/banner.png" height="400em"/>
+    <img src="docs/banner.png" height="400em"/>
 </p>
