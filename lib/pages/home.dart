@@ -229,7 +229,7 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Text(
-              'SocialShare',
+              'FlutterShare',
               style: TextStyle(
                 fontFamily: "Signatra",
                 fontSize: 90.0,
