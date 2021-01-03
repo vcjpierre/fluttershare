@@ -43,8 +43,3 @@ samples, guidance on mobile development, and a full API reference.
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Flutter](https://flutter.dev/) - open-source mobile UI framework
 - [Firebase](https://firebase.google.com/) -  Backend-as-a-Service — BaaS 
-
-## ✍️ Authors <a name = "authors"></a>
-- [@vcjpierre](https://github.com/kylelobo) - Initial work
-
-
