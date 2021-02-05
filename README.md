@@ -8,8 +8,8 @@
 <div align="center">
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub issues](https://img.shields.io/github/issues/vcjpierre/flutter-fluttershare)](https://github.com/vcjpierre/flutter-fluttershare/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/vcjpierre/flutter-fluttershare)](https://github.com/vcjpierre/flutter-fluttershare/pulls)
+  [![GitHub issues](https://img.shields.io/github/issues/vcjpierre/fluttershare)](https://github.com/vcjpierre/flutter-fluttershare/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/vcjpierre/fluttershare)](https://github.com/vcjpierre/flutter-fluttershare/pulls)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
